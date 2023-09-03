@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<title>golf</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+	<div class="page-header">
+		<nav>
+			{% for day in days %}
+			{% if day == selected_day %}
+			<a class="selected" href="/?selected_day={{ day }}">{{ days[day] }}</a>
+			{% else %}
+			<a href="/?selected_day={{ day }}">{{ days[day] }}</a>
+			{% endif %}
+			{% endfor %}
+		</nav>
+		<div class="names">
+			{% for student in classes_info %}
+			<td><span class="name">{{ student }}</span></td>
+			{% endfor %}
+		</div>
+	</div>
+	<table>
+		{% for timestamp in timestamps %}
+		<tr>
+			<td class="timestamps"><span class="timestamp">{{ timestamp }}</span></td>
+			{% for _ in range(classes_info|length) %}
+			<td></td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+	<div class="classes">
+		{% for student in classes_info %}
+		<div>
+			{% for class in classes_info[student] %}
+			<div style="{{ class }}" class="class"></div>
+			{% endfor %}
+		</div>
+		{% endfor %}
+	</div>
+	</body>
+</html>

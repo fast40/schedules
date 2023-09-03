@@ -1,0 +1,126 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: monospace;
+}
+
+html {
+	font-size: 16px;
+
+	--names-height: 12ch;
+	--timestamps-width: 5ch;
+	--nav-height: 3rem;
+}
+
+body {
+	height: 0;
+	min-height: 100vh;
+	padding-top: calc(var(--nav-height) + var(--names-height));
+	background-color: rgb(200, 200, 200);
+}
+
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+table, td, th {
+	border: 1px solid rgb(100, 100, 100);
+}
+
+.name, .timestamp {
+	display: block;
+}
+
+.timestamps {
+	width: var(--timestamps-width);
+	vertical-align: top;
+	/* background-color: rgb(80, 80, 80); */
+	background-color: rgb(100, 100, 100);
+	border: none;
+}
+
+.timestamp {
+	background-color: black;
+	color: white;
+	width: 100%;
+	text-align: center;
+}
+
+.page-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	/* background-color: rgb(255, 165, 50); */
+	background-color: rgb(160, 160, 160);
+}
+
+nav {
+	display: flex;
+	background-color: black;
+}
+
+nav a {
+	width: 100%;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	line-height: var(--nav-height);
+}
+
+nav a.selected {
+	background-color: rgb(255, 255, 255);
+	color: black;
+}
+
+.names {
+	height: var(--names-height);
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	padding-left: var(--timestamps-width);
+}
+
+.name {
+	transform-origin: top left;
+	transform: rotate(-45deg);
+	min-width: 0;  /* allows name elements to shrink to uniform width */
+	width: 100%;
+	white-space: nowrap;
+	font-weight: bold;
+}
+
+
+
+
+
+
+.classes {
+	position: absolute;
+	top: calc(var(--nav-height) + var(--names-height));
+	left: var(--timestamps-width);
+	right: 0;
+	bottom: 0;
+	display: flex;
+}
+
+.classes > div {
+	position: relative;
+	width: 100%;
+}
+
+.class {
+	position: absolute;
+	/* left: 0; */
+	width: 100%;
+	/* background-color: rgba(0, 200, 50, 0.5); */
+	background-color: rgb(220, 0, 0);
+	z-index: -1;
+}
+
