@@ -10,9 +10,9 @@
 		<nav>
 			{% for day in days %}
 			{% if day == selected_day %}
-			<a class="selected" href="/?selected_day={{ day }}">{{ days[day] }}</a>
+			<a class="selected" href="/golf?selected_day={{ day }}">{{ days[day] }}</a>
 			{% else %}
-			<a href="/?selected_day={{ day }}">{{ days[day] }}</a>
+			<a href="/golf?selected_day={{ day }}">{{ days[day] }}</a>
 			{% endif %}
 			{% endfor %}
 		</nav>

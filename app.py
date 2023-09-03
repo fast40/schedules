@@ -14,7 +14,7 @@ days = {
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/golf')
 def index():
 	selected_day = request.args.get('selected_day') or 'monday'
 
