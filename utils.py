@@ -4,7 +4,7 @@ import json
 CLASSES_JSON = 'static/classes.json'
 
 default_start = datetime.strptime('8:00am', '%I:%M%p')
-default_end = datetime.strptime('6:00pm', '%I:%M%p')
+default_end = datetime.strptime('7:00pm', '%I:%M%p')
 
 
 def parse_time(time, time_format='%I:%M%p'):
