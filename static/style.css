@@ -11,6 +11,8 @@ html {
 	--names-height: 12ch;
 	--timestamps-width: 5ch;
 	--nav-height: 3rem;
+
+	background-color: black;
 }
 
 body {
